@@ -1,64 +1,256 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amna Trading</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <h2>Amna Trading</h2>
-    <ul>
-        <li>Home</li>
-        <li>Services</li>
-        <li>About</li>
-        <li>Contact</li>
-    </ul>
-</div>
-
-<!-- HERO SECTION -->
-<div class="hero">
-    <h1>Smart Trading Solutions</h1>
-    <p>Grow your wealth with professional trading strategies</p>
-    <a href="#contact" class="cta-btn">Get Started</a>
-</div>
-
-<!-- SERVICES -->
-<div class="services">
-    <h2>Our Services</h2>
-    <div class="cards">
-        <div class="card">Forex Trading</div>
-        <div class="card">Crypto Trading</div>
-        <div class="card">Stock Analysis</div>
+    <!-- HAMBURGER MENU -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
-</div>
 
-<!-- ABOUT -->
-<div class="about">
-    <h2>About Us</h2>
-    <p>
-        We provide professional trading services with market analysis,
-        risk management, and smart investment strategies.
-    </p>
-</div>
-
-<!-- CONTACT -->
-<div class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:amnaqadoos@gmail.com">amnaqadoos@gmail.com</a></p>
-    <p>WhatsApp: <a href="https://wa.me/1234567890" target="_blank">Chat with us</a></p>
-</div>
-
-<!-- MODAL -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 id="modal-title">Service Title</h2>
-        <p id="modal-text">Service details will appear here.</p>
+    <!-- SIDE NAVBAR -->
+    <div class="sidenav" id="sidenav">
+        <div class="sidenav-logo">AT</div>
+        <ul>
+            <li onclick="scrollTo('home')">🏠 Home</li>
+            <li onclick="scrollTo('services')">📈 Services</li>
+            <li onclick="scrollTo('about')">👤 About</li>
+            <li onclick="scrollTo('contact')">📞 Contact</li>
+        </ul>
     </div>
-</div>
 
-<script src="script.js"></script>
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <!-- HOME SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="hero-tag">Professional Trading Solutions</p>
+            <h1>Grow Your<br><span>Wealth</span><br>With Us</h1>
+            <p class="hero-sub">Smart strategies. Real results. Trusted expertise.</p>
+            <div class="hero-btns">
+                <a onclick="scrollTo('services')" class="btn-primary">Our Services</a>
+                <a onclick="scrollTo('contact')" class="btn-secondary">Contact Us</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>500+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat">
+                    <h3>95%</h3>
+                    <p>Success Rate</p>
+                </div>
+                <div class="stat">
+                    <h3>10+</h3>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+        <div class="services-image">
+            <img src="services.jpg" alt="Services">
+            <div class="services-image-overlay">
+                <h2>Expert Trading<br>For Everyone</h2>
+            </div>
+        </div>
+        <div class="services-content">
+            <p class="section-tag">What We Offer</p>
+            <h2>Our Services</h2>
+
+            <div class="service-item" onclick="toggleService(this)">
+                <div class="service-header">
+                    <span>📊</span>
+                    <h3>Forex Trading</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="service-body">
+                    <ul>
+                        <li>✅ 24/7 Forex market access</li>
+                        <li>✅ Major & minor currency pairs</li>
+                        <li>✅ Real-time market analysis</li>
+                        <li>✅ Risk management strategies</li>
+                        <li>✅ Daily trading signals</li>
+                        <li>✅ Stop loss & take profit guidance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-item" onclick="toggleService(this)">
+                <div class="service-header">
+                    <span>₿</span>
+                    <h3>Crypto Trading</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="service-body">
+                    <ul>
+                        <li>✅ Bitcoin, Ethereum & Altcoins</li>
+                        <li>✅ Crypto portfolio management</li>
+                        <li>✅ Market trend analysis</li>
+                        <li>✅ Entry & exit point guidance</li>
+                        <li>✅ DeFi investment strategies</li>
+                        <li>✅ 24/7 crypto market monitoring</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-item" onclick="toggleService(this)">
+                <div class="service-header">
+                    <span>📈</span>
+                    <h3>Stock Analysis</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="service-body">
+                    <ul>
+                        <li>✅ PSX & international stock analysis</li>
+                        <li>✅ Fundamental & technical analysis</li>
+                        <li>✅ Long-term investment planning</li>
+                        <li>✅ Dividend stock recommendations</li>
+                        <li>✅ Sector-wise portfolio building</li>
+                        <li>✅ Weekly market reports</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-item" onclick="toggleService(this)">
+                <div class="service-header">
+                    <span>🎓</span>
+                    <h3>Trading Education</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="service-body">
+                    <ul>
+                        <li>✅ Beginner to advanced courses</li>
+                        <li>✅ Live trading sessions</li>
+                        <li>✅ Chart reading & indicators</li>
+                        <li>✅ Psychology of trading</li>
+                        <li>✅ One-on-one mentorship</li>
+                        <li>✅ Lifetime learning materials</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <p class="section-tag">Who We Are</p>
+            <h2>About Amna Trading</h2>
+            <p class="about-intro">
+                We are a team of experienced traders and financial analysts
+                dedicated to helping individuals and businesses grow their
+                wealth through smart, data-driven trading strategies.
+            </p>
+            <div class="about-points">
+                <div class="about-point">
+                    <span>🎯</span>
+                    <div>
+                        <h4>Our Mission</h4>
+                        <p>To provide accessible, professional trading services that empower every client to achieve financial independence through smart investments.</p>
+                    </div>
+                </div>
+                <div class="about-point">
+                    <span>👁️</span>
+                    <div>
+                        <h4>Our Vision</h4>
+                        <p>To become Pakistan's most trusted trading and investment platform, known for transparency, results, and client satisfaction.</p>
+                    </div>
+                </div>
+                <div class="about-point">
+                    <span>💎</span>
+                    <div>
+                        <h4>Our Values</h4>
+                        <p>Integrity, transparency, and client-first approach. We believe every investment decision should be based on research and honesty.</p>
+                    </div>
+                </div>
+                <div class="about-point">
+                    <span>🏆</span>
+                    <div>
+                        <h4>Our Experience</h4>
+                        <p>With over 10 years in financial markets, our team has navigated bull and bear markets, delivering consistent returns for our clients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-image">
+            <img src="about.jpg" alt="About Us">
+            <div class="about-card">
+                <h3>Why Choose Us?</h3>
+                <ul>
+                    <li>✅ Certified Trading Experts</li>
+                    <li>✅ Proven Track Record</li>
+                    <li>✅ 24/7 Client Support</li>
+                    <li>✅ Halal Investment Options</li>
+                    <li>✅ Risk Management First</li>
+                    <li>✅ Transparent Reporting</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <div class="contact-left">
+            <p class="section-tag light">Get In Touch</p>
+            <h2>Contact Us</h2>
+            <p>Ready to start your trading journey? We are here to help you every step of the way.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <div>
+                        <h4>Email</h4>
+                        <a href="mailto:amnaqadoos@gmail.com">amnaqadoos@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>💬</span>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <a href="https://wa.me/1234567890" target="_blank">Chat with us now</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>⏰</span>
+                    <div>
+                        <h4>Working Hours</h4>
+                        <p>Mon - Sat: 9:00 AM - 8:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-right">
+            <div class="contact-form">
+                <h3>Send a Message</h3>
+                <input type="text" placeholder="Your Name" id="name">
+                <input type="email" placeholder="Your Email" id="email">
+                <textarea placeholder="Your Message" id="msg" rows="4"></textarea>
+                <button onclick="sendMessage()">Send Message 🚀</button>
+                <p id="form-success" style="display:none; color:#ffd700; margin-top:10px;">
+                    ✅ Message sent successfully!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 Amna Trading. All Rights Reserved.</p>
+        <p>Designed with 💛 for smart investors</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
