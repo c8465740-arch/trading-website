@@ -18,6 +18,11 @@ html {
     background-color: #0d1b2a;
     padding: 15px 50px;
     color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    box-sizing: border-box;
 }
 
 .navbar ul {
@@ -35,10 +40,10 @@ html {
     color: #ffd700;
 }
 
-/* HERO SECTION - ✅ Picture fix */
+/* HERO SECTION */
 .hero {
     background: url('trading.jpg') no-repeat center center/cover;
-    height: 500px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,6 +99,11 @@ html {
 .services {
     text-align: center;
     padding: 50px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f2f2f2;
 }
 
 .services h2 {
@@ -130,6 +140,11 @@ html {
     background-color: #fff;
     padding: 50px 20px;
     text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .about h2 {
@@ -150,6 +165,11 @@ html {
     color: white;
     padding: 50px 20px;
     text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact h2 {
@@ -226,9 +246,14 @@ html {
     .navbar {
         flex-direction: column;
         gap: 10px;
+        padding: 10px 20px;
     }
 
     .hero h1 {
         font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
     }
 }
