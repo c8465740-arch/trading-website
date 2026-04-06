@@ -644,4 +644,25 @@ body {
     .hero-stats {
         gap: 25px;
     }
+
+    /* ✅ Contact fix mobile ke liye */
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-left {
+        padding: 40px 25px;
+    }
+
+    .contact-right {
+        padding: 0px 25px 40px 25px;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-item span {
+        font-size: 20px;
+    }
 }
